@@ -1,0 +1,42 @@
+# Node modules
+node_modules/
+
+# Build files
+.build/
+.cache/
+.tmp/
+
+# Environment variables
+.env
+.env.production
+.env.development
+.env.*.local
+.env.example
+
+# Strapi specific files
+my-upload-folder/
+public/uploads/
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# Optional: IDE/Editor specific files
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# Optional: Coverage directory for testing
+coverage/
+
+# Optional: Dependency directories
+package-lock.json
+yarn.lock
