@@ -30,19 +30,25 @@
             "targetField": "title"
         },
         "thumbnail": {
+            "type": "media",
+            "multiple": false,
+            "required": false,
             "allowedTypes": [
                 "images",
                 "files",
                 "videos",
                 "audios"
-            ],
-            "type": "media",
-            "multiple": false
+            ]
         },
         "category": {
             "type": "relation",
             "relation": "oneToOne",
             "target": "api::category.category"
+        },
+        "author": {
+            "type": "relation",
+            "relation": "oneToOne",
+            "target": "api::author.author"
         }
     }
 }

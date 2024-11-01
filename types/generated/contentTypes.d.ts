@@ -495,35 +495,6 @@ export interface PluginUsersPermissionsUser
   };
 }
 
-export interface ApiAboutAbout extends Struct.SingleTypeSchema {
-  collectionName: 'abouts';
-  info: {
-    singularName: 'about';
-    pluralName: 'abouts';
-    displayName: 'About';
-    description: 'Write about yourself and the content you create';
-  };
-  options: {
-    draftAndPublish: false;
-  };
-  attributes: {
-    title: Schema.Attribute.String;
-    blocks: Schema.Attribute.DynamicZone<
-      ['shared.media', 'shared.quote', 'shared.rich-text', 'shared.slider']
-    >;
-    createdAt: Schema.Attribute.DateTime;
-    updatedAt: Schema.Attribute.DateTime;
-    publishedAt: Schema.Attribute.DateTime;
-    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-    locale: Schema.Attribute.String & Schema.Attribute.Private;
-    localizations: Schema.Attribute.Relation<'oneToMany', 'api::about.about'> &
-      Schema.Attribute.Private;
-  };
-}
-
 export interface ApiAuthorAuthor extends Struct.CollectionTypeSchema {
   collectionName: 'authors';
   info: {
@@ -585,22 +556,20 @@ export interface ApiCategoryCategory extends Struct.CollectionTypeSchema {
   };
 }
 
-export interface ApiGlobalGlobal extends Struct.SingleTypeSchema {
-  collectionName: 'globals';
+export interface ApiGlobalSettingGlobalSetting extends Struct.SingleTypeSchema {
+  collectionName: 'global_settings';
   info: {
-    singularName: 'global';
-    pluralName: 'globals';
-    displayName: 'Global';
-    description: 'Define global settings';
+    singularName: 'global-setting';
+    pluralName: 'global-settings';
+    displayName: 'Global Setting';
   };
   options: {
-    draftAndPublish: false;
+    draftAndPublish: true;
   };
   attributes: {
-    siteName: Schema.Attribute.String & Schema.Attribute.Required;
-    favicon: Schema.Attribute.Media<'images' | 'files' | 'videos'>;
-    siteDescription: Schema.Attribute.Text & Schema.Attribute.Required;
-    defaultSeo: Schema.Attribute.Component<'shared.seo', false>;
+    title: Schema.Attribute.String;
+    description: Schema.Attribute.Text;
+    topNavigation: Schema.Attribute.Component<'layout.top-navigation', false>;
     createdAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;
     publishedAt: Schema.Attribute.DateTime;
@@ -611,7 +580,7 @@ export interface ApiGlobalGlobal extends Struct.SingleTypeSchema {
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
-      'api::global.global'
+      'api::global-setting.global-setting'
     > &
       Schema.Attribute.Private;
   };
@@ -636,6 +605,7 @@ export interface ApiPostPost extends Struct.CollectionTypeSchema {
     slug: Schema.Attribute.UID<'title'>;
     thumbnail: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
     category: Schema.Attribute.Relation<'oneToOne', 'api::category.category'>;
+    author: Schema.Attribute.Relation<'oneToOne', 'api::author.author'>;
     createdAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;
     publishedAt: Schema.Attribute.DateTime;
@@ -1031,10 +1001,9 @@ declare module '@strapi/strapi' {
       'plugin::users-permissions.permission': PluginUsersPermissionsPermission;
       'plugin::users-permissions.role': PluginUsersPermissionsRole;
       'plugin::users-permissions.user': PluginUsersPermissionsUser;
-      'api::about.about': ApiAboutAbout;
       'api::author.author': ApiAuthorAuthor;
       'api::category.category': ApiCategoryCategory;
-      'api::global.global': ApiGlobalGlobal;
+      'api::global-setting.global-setting': ApiGlobalSettingGlobalSetting;
       'api::post.post': ApiPostPost;
       'admin::permission': AdminPermission;
       'admin::user': AdminUser;
