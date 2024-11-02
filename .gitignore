@@ -15,7 +15,7 @@ node_modules/
 
 # Strapi specific files
 my-upload-folder/
-public/uploads/
+
 
 # Logs
 logs/
