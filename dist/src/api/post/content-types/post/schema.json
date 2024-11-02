@@ -15,9 +15,6 @@
         "title": {
             "type": "string"
         },
-        "content": {
-            "type": "blocks"
-        },
         "featured": {
             "type": "boolean",
             "default": false
@@ -49,6 +46,13 @@
             "type": "relation",
             "relation": "oneToOne",
             "target": "api::author.author"
+        },
+        "Content": {
+            "type": "customField",
+            "options": {
+                "preset": "default"
+            },
+            "customField": "plugin::ckeditor5.CKEditor"
         }
     }
 }
