@@ -14,7 +14,7 @@
             "name": "Apache 2.0",
             "url": "https://www.apache.org/licenses/LICENSE-2.0.html"
         },
-        "x-generation-date": "2024-11-02T14:22:38.593Z"
+        "x-generation-date": "2024-12-24T05:50:12.983Z"
     },
     "x-strapi-config": {
         "plugins": [
@@ -38,6 +38,329 @@
         }
     ],
     "paths": {
+        "/ad": {
+            "get": {
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/AdResponse"
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Error"
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Error"
+                                }
+                            }
+                        }
+                    },
+                    "403": {
+                        "description": "Forbidden",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Error"
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "Not Found",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Error"
+                                }
+                            }
+                        }
+                    },
+                    "500": {
+                        "description": "Internal Server Error",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Error"
+                                }
+                            }
+                        }
+                    }
+                },
+                "tags": [
+                    "Ad"
+                ],
+                "parameters": [
+                    {
+                        "name": "sort",
+                        "in": "query",
+                        "description": "Sort by attributes ascending (asc) or descending (desc)",
+                        "deprecated": false,
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "pagination[withCount]",
+                        "in": "query",
+                        "description": "Return page/pageSize (default: true)",
+                        "deprecated": false,
+                        "required": false,
+                        "schema": {
+                            "type": "boolean"
+                        }
+                    },
+                    {
+                        "name": "pagination[page]",
+                        "in": "query",
+                        "description": "Page number (default: 0)",
+                        "deprecated": false,
+                        "required": false,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    },
+                    {
+                        "name": "pagination[pageSize]",
+                        "in": "query",
+                        "description": "Page size (default: 25)",
+                        "deprecated": false,
+                        "required": false,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    },
+                    {
+                        "name": "pagination[start]",
+                        "in": "query",
+                        "description": "Offset value (default: 0)",
+                        "deprecated": false,
+                        "required": false,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    },
+                    {
+                        "name": "pagination[limit]",
+                        "in": "query",
+                        "description": "Number of entities to return (default: 25)",
+                        "deprecated": false,
+                        "required": false,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    },
+                    {
+                        "name": "fields",
+                        "in": "query",
+                        "description": "Fields to return (ex: title,author)",
+                        "deprecated": false,
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "populate",
+                        "in": "query",
+                        "description": "Relations to return",
+                        "deprecated": false,
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "filters",
+                        "in": "query",
+                        "description": "Filters to apply",
+                        "deprecated": false,
+                        "required": false,
+                        "schema": {
+                            "type": "object",
+                            "additionalProperties": true
+                        },
+                        "style": "deepObject"
+                    },
+                    {
+                        "name": "locale",
+                        "in": "query",
+                        "description": "Locale to apply",
+                        "deprecated": false,
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "operationId": "get/ad"
+            },
+            "put": {
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/AdResponse"
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Error"
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Error"
+                                }
+                            }
+                        }
+                    },
+                    "403": {
+                        "description": "Forbidden",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Error"
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "Not Found",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Error"
+                                }
+                            }
+                        }
+                    },
+                    "500": {
+                        "description": "Internal Server Error",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Error"
+                                }
+                            }
+                        }
+                    }
+                },
+                "tags": [
+                    "Ad"
+                ],
+                "parameters": [],
+                "operationId": "put/ad",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/AdRequest"
+                            }
+                        }
+                    }
+                }
+            },
+            "delete": {
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "integer",
+                                    "format": "int64"
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Error"
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Error"
+                                }
+                            }
+                        }
+                    },
+                    "403": {
+                        "description": "Forbidden",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Error"
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "Not Found",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Error"
+                                }
+                            }
+                        }
+                    },
+                    "500": {
+                        "description": "Internal Server Error",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Error"
+                                }
+                            }
+                        }
+                    }
+                },
+                "tags": [
+                    "Ad"
+                ],
+                "parameters": [],
+                "operationId": "delete/ad"
+            }
+        },
         "/authors": {
             "get": {
                 "responses": {
@@ -1879,6 +2202,329 @@
                 "operationId": "delete/posts/{id}"
             }
         },
+        "/top-ad": {
+            "get": {
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/TopAdResponse"
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Error"
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Error"
+                                }
+                            }
+                        }
+                    },
+                    "403": {
+                        "description": "Forbidden",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Error"
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "Not Found",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Error"
+                                }
+                            }
+                        }
+                    },
+                    "500": {
+                        "description": "Internal Server Error",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Error"
+                                }
+                            }
+                        }
+                    }
+                },
+                "tags": [
+                    "Top-ad"
+                ],
+                "parameters": [
+                    {
+                        "name": "sort",
+                        "in": "query",
+                        "description": "Sort by attributes ascending (asc) or descending (desc)",
+                        "deprecated": false,
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "pagination[withCount]",
+                        "in": "query",
+                        "description": "Return page/pageSize (default: true)",
+                        "deprecated": false,
+                        "required": false,
+                        "schema": {
+                            "type": "boolean"
+                        }
+                    },
+                    {
+                        "name": "pagination[page]",
+                        "in": "query",
+                        "description": "Page number (default: 0)",
+                        "deprecated": false,
+                        "required": false,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    },
+                    {
+                        "name": "pagination[pageSize]",
+                        "in": "query",
+                        "description": "Page size (default: 25)",
+                        "deprecated": false,
+                        "required": false,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    },
+                    {
+                        "name": "pagination[start]",
+                        "in": "query",
+                        "description": "Offset value (default: 0)",
+                        "deprecated": false,
+                        "required": false,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    },
+                    {
+                        "name": "pagination[limit]",
+                        "in": "query",
+                        "description": "Number of entities to return (default: 25)",
+                        "deprecated": false,
+                        "required": false,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    },
+                    {
+                        "name": "fields",
+                        "in": "query",
+                        "description": "Fields to return (ex: title,author)",
+                        "deprecated": false,
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "populate",
+                        "in": "query",
+                        "description": "Relations to return",
+                        "deprecated": false,
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "filters",
+                        "in": "query",
+                        "description": "Filters to apply",
+                        "deprecated": false,
+                        "required": false,
+                        "schema": {
+                            "type": "object",
+                            "additionalProperties": true
+                        },
+                        "style": "deepObject"
+                    },
+                    {
+                        "name": "locale",
+                        "in": "query",
+                        "description": "Locale to apply",
+                        "deprecated": false,
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "operationId": "get/top-ad"
+            },
+            "put": {
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/TopAdResponse"
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Error"
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Error"
+                                }
+                            }
+                        }
+                    },
+                    "403": {
+                        "description": "Forbidden",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Error"
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "Not Found",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Error"
+                                }
+                            }
+                        }
+                    },
+                    "500": {
+                        "description": "Internal Server Error",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Error"
+                                }
+                            }
+                        }
+                    }
+                },
+                "tags": [
+                    "Top-ad"
+                ],
+                "parameters": [],
+                "operationId": "put/top-ad",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/TopAdRequest"
+                            }
+                        }
+                    }
+                }
+            },
+            "delete": {
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "integer",
+                                    "format": "int64"
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Error"
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Error"
+                                }
+                            }
+                        }
+                    },
+                    "403": {
+                        "description": "Forbidden",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Error"
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "Not Found",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Error"
+                                }
+                            }
+                        }
+                    },
+                    "500": {
+                        "description": "Internal Server Error",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Error"
+                                }
+                            }
+                        }
+                    }
+                },
+                "tags": [
+                    "Top-ad"
+                ],
+                "parameters": [],
+                "operationId": "delete/top-ad"
+            }
+        },
         "/upload": {
             "post": {
                 "description": "Upload files",
@@ -3328,6 +3974,525 @@
                                 "type": "object"
                             }
                         }
+                    }
+                }
+            },
+            "AdRequest": {
+                "type": "object",
+                "required": [
+                    "data"
+                ],
+                "properties": {
+                    "data": {
+                        "type": "object",
+                        "properties": {
+                            "topad": {
+                                "type": "array",
+                                "items": {
+                                    "$ref": "#/components/schemas/ElementsTopAdComponent"
+                                }
+                            },
+                            "sidebarad": {
+                                "type": "array",
+                                "items": {
+                                    "$ref": "#/components/schemas/ElementsSidebarAdComponent"
+                                }
+                            },
+                            "locale": {
+                                "type": "string"
+                            },
+                            "localizations": {
+                                "type": "array",
+                                "items": {
+                                    "oneOf": [
+                                        {
+                                            "type": "integer"
+                                        },
+                                        {
+                                            "type": "string"
+                                        }
+                                    ],
+                                    "example": "string or id"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "AdListResponse": {
+                "type": "object",
+                "properties": {
+                    "data": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/Ad"
+                        }
+                    },
+                    "meta": {
+                        "type": "object",
+                        "properties": {
+                            "pagination": {
+                                "type": "object",
+                                "properties": {
+                                    "page": {
+                                        "type": "integer"
+                                    },
+                                    "pageSize": {
+                                        "type": "integer",
+                                        "minimum": 25
+                                    },
+                                    "pageCount": {
+                                        "type": "integer",
+                                        "maximum": 1
+                                    },
+                                    "total": {
+                                        "type": "integer"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "Ad": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "type": "number"
+                    },
+                    "documentId": {
+                        "type": "string"
+                    },
+                    "topad": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/ElementsTopAdComponent"
+                        }
+                    },
+                    "sidebarad": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/ElementsSidebarAdComponent"
+                        }
+                    },
+                    "createdAt": {
+                        "type": "string",
+                        "format": "date-time"
+                    },
+                    "updatedAt": {
+                        "type": "string",
+                        "format": "date-time"
+                    },
+                    "publishedAt": {
+                        "type": "string",
+                        "format": "date-time"
+                    },
+                    "createdBy": {
+                        "type": "object",
+                        "properties": {
+                            "id": {
+                                "type": "number"
+                            },
+                            "documentId": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    "updatedBy": {
+                        "type": "object",
+                        "properties": {
+                            "id": {
+                                "type": "number"
+                            },
+                            "documentId": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    "locale": {
+                        "type": "string"
+                    },
+                    "localizations": {
+                        "type": "array",
+                        "items": {
+                            "type": "object",
+                            "properties": {
+                                "id": {
+                                    "type": "number"
+                                },
+                                "documentId": {
+                                    "type": "string"
+                                },
+                                "topad": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/components/schemas/ElementsTopAdComponent"
+                                    }
+                                },
+                                "sidebarad": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/components/schemas/ElementsSidebarAdComponent"
+                                    }
+                                },
+                                "createdAt": {
+                                    "type": "string",
+                                    "format": "date-time"
+                                },
+                                "updatedAt": {
+                                    "type": "string",
+                                    "format": "date-time"
+                                },
+                                "publishedAt": {
+                                    "type": "string",
+                                    "format": "date-time"
+                                },
+                                "createdBy": {
+                                    "type": "object",
+                                    "properties": {
+                                        "id": {
+                                            "type": "number"
+                                        },
+                                        "documentId": {
+                                            "type": "string"
+                                        }
+                                    }
+                                },
+                                "updatedBy": {
+                                    "type": "object",
+                                    "properties": {
+                                        "id": {
+                                            "type": "number"
+                                        },
+                                        "documentId": {
+                                            "type": "string"
+                                        }
+                                    }
+                                },
+                                "locale": {
+                                    "type": "string"
+                                },
+                                "localizations": {
+                                    "type": "array",
+                                    "items": {
+                                        "type": "object",
+                                        "properties": {
+                                            "id": {
+                                                "type": "number"
+                                            },
+                                            "documentId": {
+                                                "type": "string"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "AdResponse": {
+                "type": "object",
+                "properties": {
+                    "data": {
+                        "$ref": "#/components/schemas/Ad"
+                    },
+                    "meta": {
+                        "type": "object"
+                    }
+                }
+            },
+            "ElementsLinkComponent": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "type": "number"
+                    },
+                    "label": {
+                        "type": "string"
+                    },
+                    "href": {
+                        "type": "string"
+                    }
+                }
+            },
+            "ElementsTopAdComponent": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "type": "number"
+                    },
+                    "TopAdImage": {
+                        "type": "object",
+                        "properties": {
+                            "id": {
+                                "type": "number"
+                            },
+                            "documentId": {
+                                "type": "string"
+                            },
+                            "name": {
+                                "type": "string"
+                            },
+                            "alternativeText": {
+                                "type": "string"
+                            },
+                            "caption": {
+                                "type": "string"
+                            },
+                            "width": {
+                                "type": "integer"
+                            },
+                            "height": {
+                                "type": "integer"
+                            },
+                            "formats": {},
+                            "hash": {
+                                "type": "string"
+                            },
+                            "ext": {
+                                "type": "string"
+                            },
+                            "mime": {
+                                "type": "string"
+                            },
+                            "size": {
+                                "type": "number",
+                                "format": "float"
+                            },
+                            "url": {
+                                "type": "string"
+                            },
+                            "previewUrl": {
+                                "type": "string"
+                            },
+                            "provider": {
+                                "type": "string"
+                            },
+                            "provider_metadata": {},
+                            "related": {
+                                "type": "array",
+                                "items": {
+                                    "type": "object",
+                                    "properties": {
+                                        "id": {
+                                            "type": "number"
+                                        },
+                                        "documentId": {
+                                            "type": "string"
+                                        }
+                                    }
+                                }
+                            },
+                            "folder": {
+                                "type": "object",
+                                "properties": {
+                                    "id": {
+                                        "type": "number"
+                                    },
+                                    "documentId": {
+                                        "type": "string"
+                                    }
+                                }
+                            },
+                            "folderPath": {
+                                "type": "string"
+                            },
+                            "createdAt": {
+                                "type": "string",
+                                "format": "date-time"
+                            },
+                            "updatedAt": {
+                                "type": "string",
+                                "format": "date-time"
+                            },
+                            "publishedAt": {
+                                "type": "string",
+                                "format": "date-time"
+                            },
+                            "createdBy": {
+                                "type": "object",
+                                "properties": {
+                                    "id": {
+                                        "type": "number"
+                                    },
+                                    "documentId": {
+                                        "type": "string"
+                                    }
+                                }
+                            },
+                            "updatedBy": {
+                                "type": "object",
+                                "properties": {
+                                    "id": {
+                                        "type": "number"
+                                    },
+                                    "documentId": {
+                                        "type": "string"
+                                    }
+                                }
+                            },
+                            "locale": {
+                                "type": "string"
+                            },
+                            "localizations": {
+                                "type": "array",
+                                "items": {
+                                    "type": "object",
+                                    "properties": {
+                                        "id": {
+                                            "type": "number"
+                                        },
+                                        "documentId": {
+                                            "type": "string"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "linkredirect": {
+                        "$ref": "#/components/schemas/ElementsLinkComponent"
+                    }
+                }
+            },
+            "ElementsSidebarAdComponent": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "type": "number"
+                    },
+                    "AdImage": {
+                        "type": "object",
+                        "properties": {
+                            "id": {
+                                "type": "number"
+                            },
+                            "documentId": {
+                                "type": "string"
+                            },
+                            "name": {
+                                "type": "string"
+                            },
+                            "alternativeText": {
+                                "type": "string"
+                            },
+                            "caption": {
+                                "type": "string"
+                            },
+                            "width": {
+                                "type": "integer"
+                            },
+                            "height": {
+                                "type": "integer"
+                            },
+                            "formats": {},
+                            "hash": {
+                                "type": "string"
+                            },
+                            "ext": {
+                                "type": "string"
+                            },
+                            "mime": {
+                                "type": "string"
+                            },
+                            "size": {
+                                "type": "number",
+                                "format": "float"
+                            },
+                            "url": {
+                                "type": "string"
+                            },
+                            "previewUrl": {
+                                "type": "string"
+                            },
+                            "provider": {
+                                "type": "string"
+                            },
+                            "provider_metadata": {},
+                            "related": {
+                                "type": "array",
+                                "items": {
+                                    "type": "object",
+                                    "properties": {
+                                        "id": {
+                                            "type": "number"
+                                        },
+                                        "documentId": {
+                                            "type": "string"
+                                        }
+                                    }
+                                }
+                            },
+                            "folder": {
+                                "type": "object",
+                                "properties": {
+                                    "id": {
+                                        "type": "number"
+                                    },
+                                    "documentId": {
+                                        "type": "string"
+                                    }
+                                }
+                            },
+                            "folderPath": {
+                                "type": "string"
+                            },
+                            "createdAt": {
+                                "type": "string",
+                                "format": "date-time"
+                            },
+                            "updatedAt": {
+                                "type": "string",
+                                "format": "date-time"
+                            },
+                            "publishedAt": {
+                                "type": "string",
+                                "format": "date-time"
+                            },
+                            "createdBy": {
+                                "type": "object",
+                                "properties": {
+                                    "id": {
+                                        "type": "number"
+                                    },
+                                    "documentId": {
+                                        "type": "string"
+                                    }
+                                }
+                            },
+                            "updatedBy": {
+                                "type": "object",
+                                "properties": {
+                                    "id": {
+                                        "type": "number"
+                                    },
+                                    "documentId": {
+                                        "type": "string"
+                                    }
+                                }
+                            },
+                            "locale": {
+                                "type": "string"
+                            },
+                            "localizations": {
+                                "type": "array",
+                                "items": {
+                                    "type": "object",
+                                    "properties": {
+                                        "id": {
+                                            "type": "number"
+                                        },
+                                        "documentId": {
+                                            "type": "string"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "linkredirect": {
+                        "$ref": "#/components/schemas/ElementsLinkComponent"
                     }
                 }
             },
@@ -5203,31 +6368,6 @@
                     }
                 }
             },
-            "ElementsLinkComponent": {
-                "type": "object",
-                "properties": {
-                    "id": {
-                        "type": "number"
-                    },
-                    "label": {
-                        "type": "string"
-                    },
-                    "href": {
-                        "type": "string"
-                    },
-                    "isExternal": {
-                        "type": "boolean"
-                    },
-                    "type": {
-                        "type": "string",
-                        "enum": [
-                            "LINK",
-                            "PRIMARY",
-                            "SECONDARY"
-                        ]
-                    }
-                }
-            },
             "LayoutTopNavigationComponent": {
                 "type": "object",
                 "properties": {
@@ -6520,6 +7660,213 @@
                 "properties": {
                     "data": {
                         "$ref": "#/components/schemas/Post"
+                    },
+                    "meta": {
+                        "type": "object"
+                    }
+                }
+            },
+            "TopAdRequest": {
+                "type": "object",
+                "required": [
+                    "data"
+                ],
+                "properties": {
+                    "data": {
+                        "type": "object",
+                        "properties": {
+                            "topad": {
+                                "$ref": "#/components/schemas/ElementsTopAdComponent"
+                            },
+                            "sidebarad": {
+                                "$ref": "#/components/schemas/ElementsSidebarAdComponent"
+                            },
+                            "locale": {
+                                "type": "string"
+                            },
+                            "localizations": {
+                                "type": "array",
+                                "items": {
+                                    "oneOf": [
+                                        {
+                                            "type": "integer"
+                                        },
+                                        {
+                                            "type": "string"
+                                        }
+                                    ],
+                                    "example": "string or id"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "TopAdListResponse": {
+                "type": "object",
+                "properties": {
+                    "data": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/TopAd"
+                        }
+                    },
+                    "meta": {
+                        "type": "object",
+                        "properties": {
+                            "pagination": {
+                                "type": "object",
+                                "properties": {
+                                    "page": {
+                                        "type": "integer"
+                                    },
+                                    "pageSize": {
+                                        "type": "integer",
+                                        "minimum": 25
+                                    },
+                                    "pageCount": {
+                                        "type": "integer",
+                                        "maximum": 1
+                                    },
+                                    "total": {
+                                        "type": "integer"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "TopAd": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "type": "number"
+                    },
+                    "documentId": {
+                        "type": "string"
+                    },
+                    "topad": {
+                        "$ref": "#/components/schemas/ElementsTopAdComponent"
+                    },
+                    "sidebarad": {
+                        "$ref": "#/components/schemas/ElementsSidebarAdComponent"
+                    },
+                    "createdAt": {
+                        "type": "string",
+                        "format": "date-time"
+                    },
+                    "updatedAt": {
+                        "type": "string",
+                        "format": "date-time"
+                    },
+                    "publishedAt": {
+                        "type": "string",
+                        "format": "date-time"
+                    },
+                    "createdBy": {
+                        "type": "object",
+                        "properties": {
+                            "id": {
+                                "type": "number"
+                            },
+                            "documentId": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    "updatedBy": {
+                        "type": "object",
+                        "properties": {
+                            "id": {
+                                "type": "number"
+                            },
+                            "documentId": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    "locale": {
+                        "type": "string"
+                    },
+                    "localizations": {
+                        "type": "array",
+                        "items": {
+                            "type": "object",
+                            "properties": {
+                                "id": {
+                                    "type": "number"
+                                },
+                                "documentId": {
+                                    "type": "string"
+                                },
+                                "topad": {
+                                    "$ref": "#/components/schemas/ElementsTopAdComponent"
+                                },
+                                "sidebarad": {
+                                    "$ref": "#/components/schemas/ElementsSidebarAdComponent"
+                                },
+                                "createdAt": {
+                                    "type": "string",
+                                    "format": "date-time"
+                                },
+                                "updatedAt": {
+                                    "type": "string",
+                                    "format": "date-time"
+                                },
+                                "publishedAt": {
+                                    "type": "string",
+                                    "format": "date-time"
+                                },
+                                "createdBy": {
+                                    "type": "object",
+                                    "properties": {
+                                        "id": {
+                                            "type": "number"
+                                        },
+                                        "documentId": {
+                                            "type": "string"
+                                        }
+                                    }
+                                },
+                                "updatedBy": {
+                                    "type": "object",
+                                    "properties": {
+                                        "id": {
+                                            "type": "number"
+                                        },
+                                        "documentId": {
+                                            "type": "string"
+                                        }
+                                    }
+                                },
+                                "locale": {
+                                    "type": "string"
+                                },
+                                "localizations": {
+                                    "type": "array",
+                                    "items": {
+                                        "type": "object",
+                                        "properties": {
+                                            "id": {
+                                                "type": "number"
+                                            },
+                                            "documentId": {
+                                                "type": "string"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "TopAdResponse": {
+                "type": "object",
+                "properties": {
+                    "data": {
+                        "$ref": "#/components/schemas/TopAd"
                     },
                     "meta": {
                         "type": "object"

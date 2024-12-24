@@ -1,0 +1,25 @@
+{
+  "kind": "singleType",
+  "collectionName": "ads",
+  "info": {
+    "singularName": "ad",
+    "pluralName": "ads",
+    "displayName": "Ad Management"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "topad": {
+      "type": "component",
+      "repeatable": true,
+      "component": "elements.top-ad"
+    },
+    "sidebarad": {
+      "type": "component",
+      "repeatable": true,
+      "component": "elements.sidebar-ad"
+    }
+  }
+}

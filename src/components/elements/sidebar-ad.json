@@ -1,0 +1,24 @@
+{
+  "collectionName": "components_elements_sidebar_ads",
+  "info": {
+    "displayName": "SidebarAd"
+  },
+  "options": {},
+  "attributes": {
+    "AdImage": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "linkredirect": {
+      "type": "component",
+      "repeatable": false,
+      "component": "elements.link"
+    }
+  }
+}

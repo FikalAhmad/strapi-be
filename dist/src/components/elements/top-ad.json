@@ -1,0 +1,23 @@
+{
+    "collectionName": "components_elements_top_ads",
+    "info": {
+        "displayName": "TopAd",
+        "description": ""
+    },
+    "options": {},
+    "attributes": {
+        "TopAdImage": {
+            "type": "media",
+            "multiple": false,
+            "required": false,
+            "allowedTypes": [
+                "images"
+            ]
+        },
+        "linkredirect": {
+            "type": "component",
+            "repeatable": false,
+            "component": "elements.link"
+        }
+    }
+}

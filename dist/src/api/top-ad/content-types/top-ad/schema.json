@@ -1,0 +1,27 @@
+{
+    "kind": "singleType",
+    "collectionName": "top_ads",
+    "info": {
+        "singularName": "top-ad",
+        "pluralName": "top-ads",
+        "displayName": "TopAd",
+        "description": ""
+    },
+    "options": {
+        "draftAndPublish": true
+    },
+    "pluginOptions": {},
+    "attributes": {
+        "topad": {
+            "type": "component",
+            "repeatable": false,
+            "component": "elements.top-ad"
+        },
+        "sidebarad": {
+            "displayName": "SidebarAd",
+            "type": "component",
+            "repeatable": false,
+            "component": "elements.sidebar-ad"
+        }
+    }
+}

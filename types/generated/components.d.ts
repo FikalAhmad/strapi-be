@@ -73,17 +73,39 @@ export interface LayoutTopNavigation extends Struct.ComponentSchema {
   };
 }
 
+export interface ElementsTopAd extends Struct.ComponentSchema {
+  collectionName: 'components_elements_top_ads';
+  info: {
+    displayName: 'TopAd';
+    description: '';
+  };
+  attributes: {
+    TopAdImage: Schema.Attribute.Media<'images'>;
+    linkredirect: Schema.Attribute.Component<'elements.link', false>;
+  };
+}
+
+export interface ElementsSidebarAd extends Struct.ComponentSchema {
+  collectionName: 'components_elements_sidebar_ads';
+  info: {
+    displayName: 'SidebarAd';
+  };
+  attributes: {
+    AdImage: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    linkredirect: Schema.Attribute.Component<'elements.link', false>;
+  };
+}
+
 export interface ElementsLink extends Struct.ComponentSchema {
   collectionName: 'components_elements_links';
   info: {
     displayName: 'Link';
     icon: 'link';
+    description: '';
   };
   attributes: {
     label: Schema.Attribute.String;
     href: Schema.Attribute.String;
-    isExternal: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<false>;
-    type: Schema.Attribute.Enumeration<['LINK', 'PRIMARY', 'SECONDARY']>;
   };
 }
 
@@ -96,6 +118,8 @@ declare module '@strapi/strapi' {
       'shared.quote': SharedQuote;
       'shared.media': SharedMedia;
       'layout.top-navigation': LayoutTopNavigation;
+      'elements.top-ad': ElementsTopAd;
+      'elements.sidebar-ad': ElementsSidebarAd;
       'elements.link': ElementsLink;
     }
   }
